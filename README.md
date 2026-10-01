@@ -2,7 +2,7 @@
 
 Estudante de ADS (3º período) que já atua profissionalmente com desenvolvimento e suporte. No dia a dia, participo da construção e da manutenção de sistemas, crio automações em Python e resolvo problemas técnicos reais, buscando sempre soluções organizadas e fáceis de manter.
 
-## 💼 Experiência
+## Experiência
 
 Atuação profissional em **Suporte/Desenvolvimento Jr.**, participando do desenvolvimento e da manutenção de sistemas, automações, tratamento de problemas técnicos, levantamento de requisitos e implementação de melhorias.
 
@@ -10,7 +10,7 @@ Também participo de reuniões com usuários e equipe para compreender necessida
 
 > Os projetos profissionais não aparecem aqui por serem privados e de propriedade da empresa.
 
-## 🧰 Tecnologias
+## Tecnologias
 
 ### Linguagens & Frameworks
 
@@ -36,7 +36,7 @@ Também participo de reuniões com usuários e equipe para compreender necessida
 ![Scrum](https://img.shields.io/badge/SCRUM-009FDA?style=for-the-badge)
 ![Kanban](https://img.shields.io/badge/KANBAN-0052CC?style=for-the-badge)
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <p>
   <img height="165" alt="My GitHub Statistics" src="./assets/stats.svg" />
