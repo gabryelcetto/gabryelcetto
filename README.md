@@ -50,15 +50,5 @@ Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente no 3º perí
 </p>
 
 <p>
-  <img alt="Streak" src="./assets/streak.svg" />
-</p>
-
-<p>
-  <img alt="Contribution Activity" src="./assets/activity.svg" />
-</p>
-
-<p>
   <img alt="Trophies" src="./assets/trophies.svg" />
 </p>
-
-![Visitas](https://komarev.com/ghpvc/?username=gabryelcetto&label=VISITAS&style=for-the-badge&color=2F81F7)

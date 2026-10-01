@@ -70,14 +70,7 @@ def coletar():
             )["viewer"]["contributionsCollection"]
         commits += c["totalCommitContributions"] + c["restrictedContributionsCount"]
 
-    # calendário do último ano (inclui privadas quando o token é do dono)
-    semanas = gql("""{ viewer { contributionsCollection { contributionCalendar {
-        weeks { contributionDays { date contributionCount } } } } } }"""
-        )["viewer"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-    dias = [(x["date"], x["contributionCount"]) for w in semanas for x in w["contributionDays"]]
-
     return {
-        "dias": dias,
         "login": base["login"],
         "estrelas": estrelas,
         "commits": commits,
@@ -141,83 +134,6 @@ def svg_langs(d, top=6):
 '''
 
 
-def sequencias(dias):
-    """Devolve (total, sequência atual, maior sequência) a partir de [(data, qtd)]."""
-    hoje = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    dias = [x for x in dias if x[0] <= hoje]
-    total = sum(q for _, q in dias)
-    maior = atual = 0
-    for _, q in dias:
-        atual = atual + 1 if q > 0 else 0
-        maior = max(maior, atual)
-    # a sequência atual não quebra se hoje ainda não tem contribuição
-    corrente = 0
-    for i, (_, q) in enumerate(reversed(dias)):
-        if q > 0:
-            corrente += 1
-        elif i == 0:
-            continue
-        else:
-            break
-    return total, corrente, maior
-
-
-def svg_streak(d):
-    total, atual, maior = sequencias(d["dias"])
-    colunas = [(total, "Total Contributions", "último ano"),
-               (atual, "Current Streak", "dias seguidos"),
-               (maior, "Longest Streak", "dias seguidos")]
-    corpo = ""
-    for i, (valor, titulo, sub) in enumerate(colunas):
-        cx = 78 + i * 155
-        cor = TITLE if i == 1 else TEXT
-        corpo += (f'<text x="{cx}" y="70" text-anchor="middle" fill="{cor}" font-weight="700" font-size="30">{valor:,}</text>'
-                  f'<text x="{cx}" y="98" text-anchor="middle" fill="{cor}" font-weight="600" font-size="13">{titulo}</text>'
-                  f'<text x="{cx}" y="116" text-anchor="middle" fill="{ICON}" font-size="11">{sub}</text>')
-    divisores = "".join(f'<line x1="{155 * i + 1}" y1="35" x2="{155 * i + 1}" y2="125" stroke="#2f3150"/>' for i in (1, 2))
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="467" height="150" viewBox="0 0 467 150" font-family="{FONT}">
-<rect width="467" height="150" rx="4.5" fill="{BG}"/>
-{divisores}
-{corpo}
-</svg>
-'''
-
-
-def svg_atividade(d):
-    # soma por semana (7 dias) para suavizar o gráfico
-    dias = [q for _, q in d["dias"]]
-    semanas = [sum(dias[i:i + 7]) for i in range(0, len(dias), 7)]
-    w, h, px, py = 700, 220, 40, 45
-    topo = max(max(semanas), 1)
-    passo = (w - 2 * px) / max(len(semanas) - 1, 1)
-    pontos = [(px + i * passo, h - py - (h - 2 * py) * v / topo) for i, v in enumerate(semanas)]
-    linha = " ".join(f"{x:.1f},{y:.1f}" for x, y in pontos)
-    area = f"{px},{h - py} " + linha + f" {pontos[-1][0]:.1f},{h - py}"
-    grade = "".join(
-        f'<line x1="{px}" y1="{y:.1f}" x2="{w - px}" y2="{y:.1f}" stroke="#2f3150"/>'
-        f'<text x="{px - 8}" y="{y + 4:.1f}" text-anchor="end" fill="{ICON}" font-size="10">{round(topo * f)}</text>'
-        for f, y in ((f, h - py - (h - 2 * py) * f) for f in (0, 0.5, 1)))
-    # rótulos de mês
-    meses, ultimo, x_ult = "", None, -99
-    for i, (data, _) in enumerate(d["dias"][::7]):
-        m = data[5:7]
-        if m != ultimo and i < len(pontos):
-            ultimo = m
-            if pontos[i][0] - x_ult < 38:  # evita rótulos sobrepostos
-                continue
-            x_ult = pontos[i][0]
-            meses += f'<text x="{x_ult:.1f}" y="{h - 20}" text-anchor="middle" fill="{ICON}" font-size="10">{m}/{data[2:4]}</text>'
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" font-family="{FONT}">
-<rect width="{w}" height="{h}" rx="4.5" fill="{BG}"/>
-<text x="{px}" y="28" fill="{TITLE}" font-weight="600" font-size="18">Contribution Activity (por semana)</text>
-{grade}
-<polygon points="{area}" fill="{TEXT}" fill-opacity="0.15"/>
-<polyline points="{linha}" fill="none" stroke="{TEXT}" stroke-width="2.5" stroke-linejoin="round"/>
-{meses}
-</svg>
-'''
-
-
 # (título, chave em d, limites para os ranks C, B, A, S)
 TROFEUS = [
     ("Commits", "commits", (10, 50, 200, 1000)),
@@ -239,11 +155,13 @@ def svg_trofeus(d):
         letra, cor = RANKS[nivel]
         x = i * cel + cel / 2
         corpo += (f'<g transform="translate({x} 0)">'
-                  f'<path d="M-16 28 h32 v14 a16 16 0 0 1 -32 0 z" fill="{cor}"/>'
-                  f'<rect x="-6" y="56" width="12" height="9" fill="{cor}"/><rect x="-14" y="64" width="28" height="6" rx="2" fill="{cor}"/>'
-                  f'<text y="52" text-anchor="middle" fill="{BG}" font-weight="800" font-size="16">{letra}</text>'
-                  f'<text y="92" text-anchor="middle" fill="{cor}" font-weight="700" font-size="12">{escape(titulo)}</text>'
-                  f'<text y="110" text-anchor="middle" fill="{TEXT}" font-size="12">{valor:,}</text></g>')
+                  f'<path d="M-14 18 L-22 52 L-10 46 L-4 56 L4 24 Z" fill="{cor}" fill-opacity="0.55"/>'
+                  f'<path d="M14 18 L22 52 L10 46 L4 56 L-4 24 Z" fill="{cor}" fill-opacity="0.8"/>'
+                  f'<circle cy="48" r="22" fill="{cor}"/>'
+                  f'<circle cy="48" r="17" fill="none" stroke="{BG}" stroke-opacity="0.45" stroke-width="2"/>'
+                  f'<text y="56" text-anchor="middle" fill="{BG}" font-weight="800" font-size="22">{letra}</text>'
+                  f'<text y="94" text-anchor="middle" fill="{cor}" font-weight="700" font-size="12">{escape(titulo)}</text>'
+                  f'<text y="112" text-anchor="middle" fill="{TEXT}" font-size="12">{valor:,}</text></g>')
     w = cel * len(TROFEUS)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="130" viewBox="0 0 {w} 130" font-family="{FONT}">
 <rect width="{w}" height="130" rx="4.5" fill="{BG}"/>
@@ -257,10 +175,8 @@ def main():
     OUT.mkdir(exist_ok=True)
     (OUT / "stats.svg").write_text(svg_stats(d), encoding="utf-8")
     (OUT / "langs.svg").write_text(svg_langs(d), encoding="utf-8")
-    (OUT / "streak.svg").write_text(svg_streak(d), encoding="utf-8")
-    (OUT / "activity.svg").write_text(svg_atividade(d), encoding="utf-8")
     (OUT / "trophies.svg").write_text(svg_trofeus(d), encoding="utf-8")
-    print({k: v for k, v in d.items() if k not in ("linguagens", "dias")}, list(d["linguagens"]))
+    print({k: v for k, v in d.items() if k != "linguagens"}, list(d["linguagens"]))
 
 
 if __name__ == "__main__":
