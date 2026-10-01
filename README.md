@@ -1,41 +1,35 @@
-**Suporte/Desenvolvimento Jr. | Estudante de Análise e Desenvolvimento de Sistemas**
+**Suporte/Desenvolvimento Jr.** · Estudante de Análise e Desenvolvimento de Sistemas
 
-Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente no 3º período, e já tenho experiência prática trabalhando com tecnologia no dia a dia. Além dos estudos, atuo com suporte e desenvolvimento, criando automações, trabalhando com sistemas e bancos de dados e desenvolvendo projetos reais em Python e desenvolvimento web.
+Estudante de ADS (3º período) que já atua profissionalmente com desenvolvimento e suporte. No dia a dia, participo da construção e da manutenção de sistemas, crio automações em Python e resolvo problemas técnicos reais, buscando sempre soluções organizadas e fáceis de manter.
 
-## Socials
+## 💼 Experiência
 
-[![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gabryelcetto)
+Atuação profissional em **Suporte/Desenvolvimento Jr.**, participando do desenvolvimento e da manutenção de sistemas, automações, tratamento de problemas técnicos, levantamento de requisitos e implementação de melhorias.
 
-## 🛠️ Tech Stack
+Também participo de reuniões com usuários e equipe para compreender necessidades, levantar requisitos e transformar essas necessidades em soluções técnicas.
+
+> Os projetos profissionais não aparecem aqui por serem privados e de propriedade da empresa.
+
+## 🧰 Tecnologias
 
 ### Linguagens & Frameworks
 
 ![Python](https://img.shields.io/badge/PYTHON-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
 ![Flask](https://img.shields.io/badge/FLASK-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css&logoColor=white)
 
-### Bancos de Dados
+### Banco de Dados
 
 ![MySQL](https://img.shields.io/badge/MYSQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/POSTGRES-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge)
 
 ### Ferramentas
 
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GITHUB-121011?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20CODE-007ACC?style=for-the-badge)
-![MySQL Workbench](https://img.shields.io/badge/MYSQL%20WORKBENCH-00758F?style=for-the-badge&logo=mysql&logoColor=white)
-![pgAdmin](https://img.shields.io/badge/PGADMIN-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Linux](https://img.shields.io/badge/LINUX-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Figma](https://img.shields.io/badge/FIGMA-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-
-### DevOps & CI/CD
-
 ![Docker](https://img.shields.io/badge/DOCKER-1D63ED?style=for-the-badge&logo=docker&logoColor=white)
-![Jenkins](https://img.shields.io/badge/JENKINS-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
 
 ### Metodologias
 
