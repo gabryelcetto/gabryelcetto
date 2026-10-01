@@ -1,6 +1,6 @@
-$\color{#2F81F7}{\textbf{\textsf{Suporte/Desenvolvimento Jr. | Estudante de}}}$ $\color{#2F81F7}{\textbf{\textsf{Análise e Desenvolvimento de Sistemas}}}$
+**Suporte/Desenvolvimento Jr. | Estudante de Análise e Desenvolvimento de Sistemas**
 
-$\color{#E3742B}{\textsf{Sou estudante de Análise e}}$ $\color{#E3742B}{\textsf{Desenvolvimento de Sistemas, atualmente no}}$ $\color{#E3742B}{\textsf{3º período, e já tenho}}$ $\color{#E3742B}{\textsf{experiência prática trabalhando com tecnologia}}$ $\color{#E3742B}{\textsf{no dia a dia. Além}}$ $\color{#E3742B}{\textsf{dos estudos, atuo com suporte}}$ $\color{#E3742B}{\textsf{e desenvolvimento, criando automações, trabalhando}}$ $\color{#E3742B}{\textsf{com sistemas e bancos de}}$ $\color{#E3742B}{\textsf{dados e desenvolvendo projetos reais}}$ $\color{#E3742B}{\textsf{em Python e desenvolvimento web.}}$
+Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente no 3º período, e já tenho experiência prática trabalhando com tecnologia no dia a dia. Além dos estudos, atuo com suporte e desenvolvimento, criando automações, trabalhando com sistemas e bancos de dados e desenvolvendo projetos reais em Python e desenvolvimento web.
 
 ## Socials
 
