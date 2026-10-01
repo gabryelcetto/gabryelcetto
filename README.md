@@ -29,6 +29,7 @@ Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente no 3º perí
 ![VS Code](https://img.shields.io/badge/VS%20CODE-007ACC?style=for-the-badge)
 ![MySQL Workbench](https://img.shields.io/badge/MYSQL%20WORKBENCH-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![pgAdmin](https://img.shields.io/badge/PGADMIN-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Linux](https://img.shields.io/badge/LINUX-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 ### Metodologias
 
