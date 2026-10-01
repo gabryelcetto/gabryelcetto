@@ -38,6 +38,6 @@ $\color{#E3742B}{\textsf{Sou estudante de Análise e}}$ $\color{#E3742B}{\textsf
 ## 📊 GitHub Stats
 
 <p>
-  <img height="165" alt="My GitHub Statistics" src="https://github-readme-stats.vercel.app/api?username=gabryelcetto&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" />
+  <img height="165" alt="My GitHub Statistics" src="https://github-readme-stats.vercel.app/api?username=gabryelcetto&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&rank_icon=github&v=2" />
   <img height="165" alt="My Programming Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabryelcetto&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
