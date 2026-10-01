@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif">
+<rect width="320" height="220" rx="4.5" fill="#1a1b27"/>
+<text x="25" y="35" fill="#70a5fd" font-weight="600" font-size="18">Most Used Languages</text>
+<clipPath id="r"><rect x="25" y="55" width="270" height="8" rx="4"/></clipPath>
+<g clip-path="url(#r)"><rect x="25.00" y="55" width="142.13" height="8" fill="#3572A5"/><rect x="167.13" y="55" width="96.07" height="8" fill="#e34c26"/><rect x="263.20" y="55" width="15.80" height="8" fill="#f1e05a"/><rect x="279.00" y="55" width="14.60" height="8" fill="#663399"/><rect x="293.60" y="55" width="1.13" height="8" fill="#012456"/><rect x="294.73" y="55" width="0.27" height="8" fill="#384d54"/></g>
+<circle cx="30" cy="86" r="5" fill="#3572A5"/><text x="40" y="90" fill="#38bdae" font-size="12">Python 52.6%</text><circle cx="170" cy="86" r="5" fill="#e34c26"/><text x="180" y="90" fill="#38bdae" font-size="12">HTML 35.6%</text><circle cx="30" cy="111" r="5" fill="#f1e05a"/><text x="40" y="115" fill="#38bdae" font-size="12">JavaScript 5.8%</text><circle cx="170" cy="111" r="5" fill="#663399"/><text x="180" y="115" fill="#38bdae" font-size="12">CSS 5.4%</text><circle cx="30" cy="136" r="5" fill="#012456"/><text x="40" y="140" fill="#38bdae" font-size="12">PowerShell 0.4%</text><circle cx="170" cy="136" r="5" fill="#384d54"/><text x="180" y="140" fill="#38bdae" font-size="12">Dockerfile 0.1%</text>
+</svg>
