@@ -134,48 +134,11 @@ def svg_langs(d, top=6):
 '''
 
 
-# (título, chave em d, limites para os ranks C, B, A, S)
-TROFEUS = [
-    ("Commits", "commits", (10, 50, 200, 1000)),
-    ("Repositories", "repos", (3, 8, 20, 50)),
-    ("Pull Requests", "prs", (2, 10, 50, 200)),
-    ("Issues", "issues", (2, 10, 50, 200)),
-    ("Stars", "estrelas", (1, 10, 50, 200)),
-    ("Languages", "n_langs", (2, 4, 7, 12)),
-]
-RANKS = [("-", "#4b4f72"), ("C", "#cd7f32"), ("B", "#c0c8d4"), ("A", "#ffd166"), ("S", "#70a5fd")]
-
-
-def svg_trofeus(d):
-    d = dict(d, n_langs=len(d["linguagens"]))
-    cel, corpo = 110, ""
-    for i, (titulo, chave, limites) in enumerate(TROFEUS):
-        valor = d[chave]
-        nivel = sum(valor >= x for x in limites)
-        letra, cor = RANKS[nivel]
-        x = i * cel + cel / 2
-        corpo += (f'<g transform="translate({x} 0)">'
-                  f'<path d="M-14 18 L-22 52 L-10 46 L-4 56 L4 24 Z" fill="{cor}" fill-opacity="0.55"/>'
-                  f'<path d="M14 18 L22 52 L10 46 L4 56 L-4 24 Z" fill="{cor}" fill-opacity="0.8"/>'
-                  f'<circle cy="48" r="22" fill="{cor}"/>'
-                  f'<circle cy="48" r="17" fill="none" stroke="{BG}" stroke-opacity="0.45" stroke-width="2"/>'
-                  f'<text y="56" text-anchor="middle" fill="{BG}" font-weight="800" font-size="22">{letra}</text>'
-                  f'<text y="94" text-anchor="middle" fill="{cor}" font-weight="700" font-size="12">{escape(titulo)}</text>'
-                  f'<text y="112" text-anchor="middle" fill="{TEXT}" font-size="12">{valor:,}</text></g>')
-    w = cel * len(TROFEUS)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="130" viewBox="0 0 {w} 130" font-family="{FONT}">
-<rect width="{w}" height="130" rx="4.5" fill="{BG}"/>
-{corpo}
-</svg>
-'''
-
-
 def main():
     d = coletar()
     OUT.mkdir(exist_ok=True)
     (OUT / "stats.svg").write_text(svg_stats(d), encoding="utf-8")
     (OUT / "langs.svg").write_text(svg_langs(d), encoding="utf-8")
-    (OUT / "trophies.svg").write_text(svg_trofeus(d), encoding="utf-8")
     print({k: v for k, v in d.items() if k != "linguagens"}, list(d["linguagens"]))
 
 

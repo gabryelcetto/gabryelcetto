@@ -48,7 +48,3 @@ Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente no 3º perí
   <img height="165" alt="My GitHub Statistics" src="./assets/stats.svg" />
   <img height="165" alt="My Programming Languages" src="./assets/langs.svg" />
 </p>
-
-<p>
-  <img alt="Trophies" src="./assets/trophies.svg" />
-</p>
