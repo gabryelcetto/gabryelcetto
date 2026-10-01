@@ -30,6 +30,8 @@ Sou estudante de Análise e Desenvolvimento de Sistemas, atualmente no 3º perí
 ![MySQL Workbench](https://img.shields.io/badge/MYSQL%20WORKBENCH-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![pgAdmin](https://img.shields.io/badge/PGADMIN-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Linux](https://img.shields.io/badge/LINUX-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Docker](https://img.shields.io/badge/DOCKER-1D63ED?style=for-the-badge&logo=docker&logoColor=white)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 
 ### Metodologias
 
